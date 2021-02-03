@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter table</title>
+
+    <style>
+        table,th,td{
+          
+            border: 1px solid green;
+            padding: 10px 10px;
+            border-radius: 4px;
+            color: rgba(0, 0, 0, 0.808);
+            background-color: gainsboro;
+            /* margin:auto; */
+            margin-left: 464px;
+            margin-top: 10px;
+        }
+        input{
+            margin-top: 15px;
+            margin-left: 464px;
+            width: 385px;
+            height: 25px;
+            border: 2px solid green;
+            border-radius: 5px;
+            background-color:  gainsboro;
+        }
+        h2{
+            margin-top: 30px;
+            margin-left: 564px;
+            color: green;
+        }
+    </style>
+</head>
+
+
+<body>
+      <h2> Filter table</h2>
+
+    <input type="text" name="search" id="search" placeholder="  Search..."/>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Occupation</th>
+            <th>Contact Number</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>rohan</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+        <tr>
+            <td>raj</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+        <tr>
+            <td>Mohan</td>
+             <td>11</td>
+             <td>BA</td>
+             <td>92112345</td>
+        </tr>  <tr>
+            <td>sohan</td>
+             <td>20</td>
+             <td>CS</td>
+             <td>980012345</td>
+        </tr>  <tr>
+            <td>karn</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+        <tr>
+            <td>akhilesh</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>  <tr>
+            <td>suraj</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+        <tr>
+            <td>mohit</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+        <tr>
+            <td>suman</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+        <tr>
+            <td>pavan</td>
+             <td>21</td>
+             <td>CA</td>
+             <td>98112345</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <script>
+        const searchInput=document.getElementById("search");
+        const rows=document.querySelectorAll("tbody tr");
+        console.log(rows);
+        searchInput.addEventListener("keyup",function(event){
+            console.log(event);
+            const q=event.target.value.toLowerCase();
+            rows.forEach((row)=>{
+             row.querySelector('td').textContent.toLowerCase().startsWith(q)?
+             row.style.display="table-row":row.style.display='none';
+            });
+        })
+    </script>
+</body>
+</html>
